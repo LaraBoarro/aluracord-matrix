@@ -1,3 +1,5 @@
+import IndexPage from "./indexPage";
+
 function GlobalStyle() {
   return (
       <style global jsx>{`
@@ -7,8 +9,8 @@ function GlobalStyle() {
       box-sizing: border-box;
       list-style: none;
     }
-    body {
-      font-family: 'Open Sans', sans-serif;
+    body *{
+      font-family: 'Poppins', sans-serif;
     }
     /* App fit Height */ 
     html, body, #__next {
@@ -30,6 +32,7 @@ function GlobalStyle() {
 export default function CustomApp({ Component, pageProps }) {
   return (
       <>
+          <IndexPage />
           <GlobalStyle />
           <Component {...pageProps} />
       </>
