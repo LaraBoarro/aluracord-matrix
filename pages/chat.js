@@ -66,8 +66,7 @@ export default function ChatPage() {
     <Box
       styleSheet={{
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        backgroundColor: appConfig.theme.colors.primary[500],
-        backgroundImage: `url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)`,
+        backgroundImage: `url(https://images.unsplash.com/photo-1590119977523-5af0d80c559f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80)`,
         backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
         color: appConfig.theme.colors.neutrals['000']
       }}
@@ -105,6 +104,7 @@ export default function ChatPage() {
             styleSheet={{
               display: 'flex',
               alignItems: 'center',
+              justifyContent:'center',
             }}
           >
             <TextField
@@ -124,12 +124,29 @@ export default function ChatPage() {
               styleSheet={{
                 width: '100%',
                 border: '0',
+                display:'flex',
+                alignItems:'center',
                 resize: 'none',
                 borderRadius: '5px',
                 padding: '6px 8px',
                 backgroundColor: appConfig.theme.colors.neutrals[800],
-                marginRight: '12px',
                 color: appConfig.theme.colors.neutrals[200],
+              }}
+            />
+            <Button
+              label='Enviar'
+              onClick={(event)=> {
+                event.preventDefault();
+                handleNovaMensagem(mensagem);
+              }}
+              styleSheet={{
+                  margin:'0 10px',
+              }}
+              buttonColors={{
+                contrastColor: appConfig.theme.colors.neutrals["000"],
+                mainColor: appConfig.theme.colors.primary[100],
+                mainColorLight: appConfig.theme.colors.primary['050'],
+                mainColorStrong: appConfig.theme.colors.primary[300],
               }}
             />
             <ButtonSendSticker onStickerClick={(sticker)=> {
